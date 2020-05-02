@@ -4,19 +4,19 @@
 		<title>IFS202005</title>
 	</head>
 	<body>
-		<form onSubmit="return submit(event)">
+		<form onSubmit="return onSubmit(event)">
 			<input type="text" id="input">
 			<button type="submit">Decode</button>
 			<br>
 			<input type="text" id="output">
 		</form>
 		<script>
-function submit(event) {
-	const raw = document.querySelector('input').value;
+function onSubmit(e) {
+	const raw = document.querySelector('#input').value;
 	const input = [...raw.matchAll(/\d+/g)];
 	const base = 'a'.charCodeAt(0) - 1;
 	let out = input.map(e => String.fromCharCode(base + parseInt(e))).join('');
-	document.querySelector('output').value = out;
+	document.querySelector('#output').value = out;
 	return false;
 }
 		</script>
