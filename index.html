@@ -4,7 +4,7 @@
 		<title>IFS202005</title>
 	</head>
 	<body>
-		<form onSubmit="submit(event)">
+		<form onSubmit="return submit(event)">
 			<input type="text" id="input">
 			<button type="submit">Decode</button>
 			<br>
@@ -17,7 +17,7 @@ function submit(event) {
 	const base = 'a'.charCodeAt(0) - 1;
 	let out = input.map(e => String.fromCharCode(base + parseInt(e))).join('');
 	document.querySelector('output').value = out;
-	return false,
+	return false;
 }
 		</script>
 	</body>
