@@ -13,7 +13,7 @@
 		<script>
 function submit(event) {
 	const raw = document.querySelector('input').value;
-	const input = raw.matchAll(/\d+/g);
+	const input = [...raw.matchAll(/\d+/g)];
 	const base = 'a'.charCodeAt(0) - 1;
 	let out = input.map(e => String.fromCharCode(base + parseInt(e))).join('');
 	document.querySelector('output').value = out;
